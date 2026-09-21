@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simple Calculator
 
 A responsive calculator built with **React 18 + Vite** (JavaScript).
@@ -32,3 +33,6 @@ Add your own after running the app (see `screenshots/`):
 - `screenshots/desktop.png`
 - `screenshots/mobile.png`
 - `screenshots/error.png`
+=======
+# Simple-Calculator-GR
+>>>>>>> 673bd8217c327e53a3cf9524fad0397543d7acab
