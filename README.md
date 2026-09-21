@@ -30,6 +30,7 @@ brackets are handled explicitly: brackets → unary minus → `%` → `× ÷` �
 
 ## Screenshots
 Add your own after running the app (see `screenshots/`):
-- ![image alt](https://github.com/shashikaherath/Simple-Calculator-GR/blob/f61e971c1d677e07d7fd7f458a5de17a503d73c8/src/screenshots/Screenshot%202026-09-21%20094909.png)
+- ![image alt](https://github.com/shashikaherath/Simple-Calculator-GR/blob/2a92431be2bf021d2f1cab3e85665087eb50d7b9/src/screenshots/Screenshot%202026-09-21%20094931.png)
   ![image alt](https://github.com/shashikaherath/Simple-Calculator-GR/blob/9a09fcdbb9b2fd777ddd3d78eef3b91bf6c1e993/src/screenshots/Screenshot%202026-09-21%20094909.png)
+    ![image alt](https://github.com/shashikaherath/Simple-Calculator-GR/blob/9a09fcdbb9b2fd777ddd3d78eef3b91bf6c1e993/src/screenshots/Screenshot%202026-09-21%20095037.png)
 =======
