@@ -1,0 +1,184 @@
+/* ─── Light Mode System Theme ─── */
+:root {
+  /* Backgrounds */
+  --bg:        #f0f2f5;
+  --panel:     #ffffff;
+
+  /* Text */
+  --ink:       #1a1c1e;
+  --muted:     #6b7280;
+
+  /* Number keys */
+  --key:       #f3f4f6;
+  --key-ink:   #1a1c1e;
+
+  /* Function keys (C, %, ±, brackets) */
+  --fn:        #e5e7eb;
+  --fn-ink:    #374151;
+
+  /* Operator keys — subtle blue accent */
+  --op:        #2563eb;
+  --op-ink:    #ffffff;
+
+  /* Equals key — slightly deeper blue */
+  --eq:        #1d4ed8;
+  --eq-ink:    #ffffff;
+
+  /* Dividers & shadows */
+  --line:      #d1d5db;
+
+  /* Error */
+  --err:       #dc2626;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+button { font: inherit; color: inherit; cursor: pointer; border: 0; }
+button:focus-visible { outline: 2px solid var(--op); outline-offset: 2px; border-radius: 8px; }
+
+/* ─── Layout ─── */
+.app {
+  min-height: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.calc, .history {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  box-shadow:
+    0 1px 3px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08);
+}
+.calc { width: 100%; max-width: 360px; }
+
+/* ─── Display ─── */
+.display {
+  min-height: 110px;
+  padding: 12px 8px 6px;
+  text-align: right;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+.expr {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  word-break: break-all;
+  letter-spacing: -0.02em;
+}
+.expr.small { font-size: 1.6rem; }
+.sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 1rem;
+  min-height: 1.4em;
+}
+.sub.err { color: var(--err); font-weight: 600; }
+
+/* ─── Toolbar ─── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.ghost {
+  background: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: .85rem;
+  transition: background .12s ease, color .12s ease;
+}
+.ghost:hover:not(:disabled) {
+  background: var(--fn);
+  color: var(--ink);
+}
+.ghost:disabled { opacity: .4; cursor: default; }
+
+/* ─── Key Grid ─── */
+.keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.key {
+  aspect-ratio: 1.1;
+  border-radius: 14px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  transition: transform .07s ease, box-shadow .1s ease, filter .1s ease;
+  letter-spacing: -0.01em;
+}
+.key:active { transform: scale(.94); }
+
+/* Number keys */
+.num {
+  background: var(--key);
+  color: var(--key-ink);
+  box-shadow: 0 1px 0 var(--line), 0 1px 3px rgba(0,0,0,.06);
+}
+.num:hover { filter: brightness(.96); }
+
+/* Function keys */
+.fn {
+  background: var(--fn);
+  color: var(--fn-ink);
+  box-shadow: 0 1px 0 var(--line), 0 1px 3px rgba(0,0,0,.05);
+}
+.fn:hover { filter: brightness(.95); }
+
+/* Operator keys */
+.op {
+  background: var(--op);
+  color: var(--op-ink);
+  box-shadow: 0 1px 4px rgba(37,99,235,.30);
+}
+.op:hover { filter: brightness(1.08); }
+
+/* Equals key */
+.eq {
+  background: var(--eq);
+  color: var(--eq-ink);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(29,78,216,.35);
+}
+.eq:hover { filter: brightness(1.08); }
+
+/* ─── History Panel ─── */
+.history { width: 100%; max-width: 280px; max-height: 600px; overflow: auto; }
+.history header { display: flex; align-items: center; justify-content: space-between; }
+.history h2 { margin: 0; font-size: 1rem; font-weight: 600; }
+.history ul { list-style: none; margin: 12px 0 0; padding: 0; }
+.history li + li { border-top: 1px solid var(--line); }
+.history li button {
+  width: 100%; background: none; text-align: right; padding: 10px 8px; border-radius: 8px;
+  display: flex; flex-direction: column; gap: 2px;
+  transition: background .1s ease;
+}
+.history li button:hover { background: var(--fn); }
+.h-expr { color: var(--muted); font-size: .85rem; word-break: break-all; }
+.h-val { font-weight: 700; font-size: 1.1rem; }
+.empty { color: var(--muted); font-size: .9rem; line-height: 1.5; margin: 14px 4px 4px; }
+
+/* ─── Responsive ─── */
+@media (max-width: 720px) {
+  .app { flex-direction: column; align-items: center; padding: 16px 12px; }
+  .history { display: none; max-height: 320px; max-width: 360px; }
+  .history.open { display: block; }
+  .key { font-size: 1.25rem; aspect-ratio: 1.25; }
+}
+@media (min-width: 721px) { .toolbar .ghost:first-child { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .key { transition: none; } }
+
