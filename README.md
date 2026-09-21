@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# Simple Calculator
+
+# Simple Calculator GR
 
 A responsive calculator built with **React 18 + Vite** (JavaScript).
 
@@ -30,9 +30,6 @@ brackets are handled explicitly: brackets → unary minus → `%` → `× ÷` �
 
 ## Screenshots
 Add your own after running the app (see `screenshots/`):
-- `screenshots/desktop.png`
-- `screenshots/mobile.png`
-- `screenshots/error.png`
+- ![image alt](https://github.com/shashikaherath/Simple-Calculator-GR/blob/f61e971c1d677e07d7fd7f458a5de17a503d73c8/src/screenshots/Screenshot%202026-09-21%20094909.png)
+
 =======
-# Simple-Calculator-GR
->>>>>>> 673bd8217c327e53a3cf9524fad0397543d7acab
